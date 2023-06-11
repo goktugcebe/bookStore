@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookly - Book Store Website</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<div th:replace="header :: header"></div>
+
+<!-- header section ends -->
+
+<!-- bottom navbar  -->
+
+<nav class="bottom-navbar">
+    <a th:href="@{/#home}" class="fas fa-home"></a>
+    <a th:href="@{/#featured}" class="fas fa-list"></a>
+    <a th:href="@{/#arrivals}" class="fas fa-tags"></a>
+    <a th:href="@{/#reviews}" class="fas fa-comments"></a>
+    <a th:href="@{/#blogs}" class="fas fa-blog"></a>
+</nav>
+
+
+
+
+<!-- side-bar section ends -->
+
+<!-- register form section starts  -->
+
+<section class="register">
+
+    <form method="post" th:action="@{/register}" th:object="${userDTO}">
+
+        <h3>Registration Form</h3>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email" th:value="*{email}" th:errorclass="is-invalid" class="box">
+            <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="in-valid-feedback"></div>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" th:value="*{password}"  th:errorclass="is-invalid" class="box" />
+            <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="in-valid-feedback"></div>
+        </div>
+        <div>
+            <label for="rpassword">Confirm Password:</label>
+            <input type="password" name="rpassword" id="rpassword" th:value="*{rpassword}" th:errorclass="is-invalid" class="box">
+            <div th:if="${#fields.hasErrors('rpassword')}" th:errors="*{rpassword}" class="in-valid-feedback"></div>
+        </div>
+        <div>
+            <label for="firstName">First Name:</label>
+            <input type="text" name="firstname" id="firstName" th:value="*{firstname}" th:errorclass="is-invalid" class="box">
+            <div th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}" class="in-valid-feedback"></div>
+        </div>
+        <div>
+            <label for="lastName">Last Name:</label>
+            <input type="text" name="lastname" id="lastName" th:value="*{lastname}" th:errorclass="is-invalid" class="box">
+            <div th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}" class="in-valid-feedback"></div>
+        </div>
+        <div>
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" name="phoneNumber" id="phoneNumber" th:value="*{phoneNumber}" th:errorclass="is-invalid" class="box">
+            <div th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}" class="in-valid-feedback"></div>
+        </div>
+        <div>
+            <label for="address">Address:</label>
+            <input type="text" name="address" id="address" th:value="*{address}" th:errorclass="is-invalid" class="box">
+            <div th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="in-valid-feedback"></div>
+        </div>
+
+        <button type="submit" class="btn link" >Create your account</button>
+        <p>Already have an account?</p>
+        <a th:href="@{/login}" class="btn link">login now</a>
+    </form>
+
+</section>
+
+<!-- footer section starts  -->
+
+<div th:replace="footer :: footer"></div>
+
+<!-- footer section ends -->
+
+<div class="loader-container">
+    <img th:src="@{/image/loader-img.gif}" alt="">
+</div>
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<!--<script src="/static/js/script.js"></script>-->
+<script type="text/javascript" th:src="@{/js/script.js}"></script>
+
+
+</body>
+</html>

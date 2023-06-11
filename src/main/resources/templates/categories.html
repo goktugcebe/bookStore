@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookly - Book Store Website</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+
+
+</head>
+<body>
+<!-- header section starts  -->
+
+<div th:replace="header :: header"></div>
+
+<!-- header section ends -->
+
+<!-- bottom navbar  -->
+
+<nav class="bottom-navbar">
+    <a th:href="@{/index}" class="fas fa-home"></a>
+    <a th:href="@{/#featured}" class="fas fa-list"></a>
+    <a th:href="@{/#arrivals}" class="fas fa-tags"></a>
+    <a th:href="@{/#reviews}" class="fas fa-comments"></a>
+    <a th:href="@{/#blogs}" class="fas fa-blog"></a>
+</nav>
+
+<!-- side-bar section ends -->
+
+<div class="categories">
+    <h1>Categories</h1>
+    <ul>
+        <li th:each="category : ${categories}">
+            <a th:href="@{/product/by-category/{category}(category=${category})}" th:text="${category}"></a>
+        </li>
+    </ul>
+</div>
+
+<!-- footer section starts  -->
+
+<div th:replace="footer :: footer"></div>
+
+<!-- footer section ends -->
+
+<div class="loader-container">
+    <img th:src="@{/image/loader-img.gif}" alt="">
+</div>
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<!--<script src="/static/js/script.js"></script>-->
+<script type="text/javascript" th:src="@{/js/script.js}"></script>
+
+</body>
+</html>

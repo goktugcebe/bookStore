@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookly - Book Store Website</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<div th:replace="header :: header"></div>
+
+<!-- header section ends -->
+
+<!-- bottom navbar  -->
+
+<nav class="bottom-navbar">
+    <a th:href="@{/index}" class="fas fa-home"></a>
+    <a th:href="@{/#categories}" class="fas fa-list"></a>
+    <a th:href="@{/#arrivals}" class="fas fa-tags"></a>
+    <a th:href="@{/#reviews}" class="fas fa-comments"></a>
+    <a th:href="@{/#blogs}" class="fas fa-blog"></a>
+</nav>
+
+
+<!-- side-bar section ends -->
+
+<!-- log in section starts  -->
+
+<section class="login">
+    <form method="post" th:action="@{login}">
+        <h3>Log In</h3>
+
+        <div th:if="${message}" th:text="${message}"></div>
+
+        <div class="box" th:if="${param.error}">
+            Invalid email and password.
+        </div>
+
+        <div class="box" th:if="${param.logout}">
+            You have been logged out.
+        </div>
+
+        <div >
+            <label for="email">Email:</label>
+            <input type="email" id="email" class="box" name="username" placeholder="email">
+        </div>
+
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" class="box" name="password" placeholder="password">
+        </div>
+
+        <button type="submit" class="btn">Sign In</button>
+        <a th:href="@{/register}" class="btn">Create Account</a>
+    </form>
+
+</section>
+
+<!-- log in section ends  -->
+
+<!-- footer section starts  -->
+
+<div th:replace="footer :: footer"></div>
+
+<!-- footer section ends -->
+
+<div class="loader-container">
+    <img th:src="@{/image/loader-img.gif}" alt="">
+</div>
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<!--<script src="/static/js/script.js"></script>-->
+<script type="text/javascript" th:src="@{/js/script.js}"></script>
+
+
+</body>
+</html>

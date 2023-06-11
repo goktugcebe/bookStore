@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookly - Book Store Website</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<div th:replace="header :: header"></div>
+
+<!-- header section ends -->
+
+<!-- bottom navbar  -->
+
+<nav class="bottom-navbar">
+    <a th:href="@{/#home}" class="fas fa-home"></a>
+    <a th:href="@{/#featured}" class="fas fa-list"></a>
+    <a th:href="@{/#arrivals}" class="fas fa-tags"></a>
+    <a th:href="@{/#reviews}" class="fas fa-comments"></a>
+    <a th:href="@{/#blogs}" class="fas fa-blog"></a>
+</nav>
+<section class="products">
+<div class="box-container">
+
+    <h1 class="heading"><span>Books By Author</span></h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Book</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Release Year</th>
+            <th>Rating</th>
+            <th>Price</th>
+            <th>Add to Cart</th>
+        </tr>
+        </thead>
+        <tbody>
+    <tr th:each="product: ${products}">
+        <a th:href="@{/product/by-author/{variable}(variable=${product.id})}" class="box">
+            <div class="box">
+                <td><img th:src="@{'/image/book-' + ${product.id} + '.png'}" class="product-image" alt=""></td>
+                <td th:text="${product.name}"></td>
+                <td th:utext="${product.category}"></td>
+                <td th:utext="${product.releaseYear}"></td>
+                <td th:utext="${product.rating}"></td>
+                <td th:utext="${product.price} + ' $' "></td>
+            </div>
+        </a>
+        <td>
+            <form th:action="@{/product/by-author/{variable}(variable=${product.id})}" method="post" th:object="${products}">
+                <button type="submit" class="btn link">Add to Cart</button>
+            </form>
+        </td>
+    </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</section>
+
+
+
+<div th:replace="footer :: footer"></div>
+
+<!-- footer section ends -->
+
+<div class="loader-container">
+    <img th:src="@{/image/loader-img.gif}" alt="">
+</div>
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<!--<script src="/static/js/script.js"></script>-->
+<script type="text/javascript" th:src="@{/js/script.js}"></script>
+
+
+</body>
+</html>

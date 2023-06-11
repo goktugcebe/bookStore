@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookly - Book Store Website</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<div th:replace="header :: header"></div>
+
+<!-- header section ends -->
+
+<!-- bottom navbar  -->
+
+<nav class="bottom-navbar">
+    <a th:href="@{/#home}" class="fas fa-home"></a>
+    <a th:href="@{/#featured}" class="fas fa-list"></a>
+    <a th:href="@{/#arrivals}" class="fas fa-tags"></a>
+    <a th:href="@{/#reviews}" class="fas fa-comments"></a>
+    <a th:href="@{/#blogs}" class="fas fa-blog"></a>
+</nav>
+
+
+<!-- side-bar section ends -->
+
+<!-- shopping cart section starts  -->
+
+<section class="shopping-cart">
+
+    <h1 class="heading"><span>Shopping Cart</span></h1>
+
+    <div class="small-container cart-page">
+
+        <table>
+            <thead>
+            <tr>
+                <th>Book</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Update</th>
+                <th>Delete</th>
+                <th>Subtotal</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="cart : ${carts}">
+                <td><img th:src="@{'/image/book-'+ ${cart.product.id} + '.png'}" class="product-image" alt=""></td>
+                <td th:text="${cart.product.name}"></td>
+                <td th:text="${cart.product.price + ' $'}"></td>
+<!--                <td th:text="${cart.quantity}"></td>-->
+                <td>
+                    <form th:action="@{/cart/update-cart}" method="post">
+                        <input type="hidden" name="id" th:value="${cart.id}">
+
+                    <input type="number" size="4" th:value="${cart.quantity}"
+                           name="quantity" th:min="1" step="1"
+                           class="c-input-text qty text">
+                <button type="submit" name="action" value="update" title="Update"
+                        class="btn btn-primary">Update
+                </button>
+                </form>
+                </td>
+                <td>
+                <form th:action="@{/cart/delete-cart}" method="post"
+                      onsubmit="return confirm('Do you really want to delete this item?');">
+                    <input type="hidden" name="id" th:value="${cart.id}">
+                    <button type="submit" name="action" value="delete" title="Delete" class="btn btn-danger"
+                            onclick="disableButton(this);">Delete
+                    </button>
+                </form>
+                </td>
+                <td th:text="${cart.totalPrice}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="cart-total">
+        <h3> Total : <span> <td th:text="${totalCartPrice}+ '$'"></td></span></h3>
+        <form th:action="@{/cart/delete-cart-all}" method="post">
+            <input type="hidden" name="id" th:value="${carts}">
+            <button type="submit" name="action" value="delete" title="Delete" class="btn btn-primary">Checkout</button>
+            <!--            <a th:href="@{/checkout}" class="btn"> proceed to checkout</a>-->
+        </form>
+    </div>
+
+</section>
+
+<!-- shopping cart section ends  -->
+
+<!-- footer section starts  -->
+
+<div th:replace="footer :: footer"></div>
+
+<!-- footer section ends -->
+
+<div class="loader-container">
+    <img th:src="@{/image/loader-img.gif}" alt="">
+</div>
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<!--<script src="/static/js/script.js"></script>-->
+<script type="text/javascript" th:src="@{/js/script.js}"></script>
+
+
+</body>
+</html>

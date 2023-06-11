@@ -1,0 +1,34 @@
+<header class="header">
+
+    <section class="header-1">
+
+        <a th:href="@{/index}" class="logo"> <i class="fas fa-product"></i> bookly </a>
+
+        <form action="" class="search-form">
+            <input type="search" name="" placeholder="search here..." id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+        <div class="icons">
+            <div id="search-btn" class="fas fa-search"></div>
+            <!--            <a href="#" class="fas fa-heart"></a>-->
+            <a th:href="@{/cart}" class="fas fa-shopping-cart"></a>
+            <a th:href="@{/login}" th:id="login-btn" class="fas fa-user"></a>
+            <span th:unless="${user}">User</span>
+            <span th:if="${user}" th:text="${user.firstname}"></span>
+        </div>
+
+    </section>
+
+        <div class="header-2">
+            <nav class="navbar">
+                <a href="#home">home</a>
+                <a th:href="@{/product/products}">books</a>
+                <a th:href="@{/product/authors}">authors</a>
+<!--                <a th:href="@{/product/categories}">categories</a>-->
+                <a href="#reviews">reviews</a>
+                <a href="#blogs">blogs</a>
+            </nav>
+        </div>
+
+</header>
