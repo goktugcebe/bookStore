@@ -4,9 +4,10 @@
 
         <a th:href="@{/index}" class="logo"> <i class="fas fa-product"></i> bookly </a>
 
-        <form action="" class="search-form">
-            <input type="search" name="" placeholder="search here..." id="search-box">
-            <label for="search-box" class="fas fa-search"></label>
+        <form th:action="@{/product/search}" method="get" class="search-form">
+            <input type="text" name="keyword" placeholder="search here..." >
+<!--            <label for="search-box" class="fas fa-search"></label>-->
+            <button type="submit" class="fas fa-search" id="search-box"></button>
         </form>
 
         <div class="icons">
@@ -22,12 +23,12 @@
 
         <div class="header-2">
             <nav class="navbar">
-                <a href="#home">home</a>
+                <a th:href="@{/index#home}">home</a>
                 <a th:href="@{/product/products}">books</a>
                 <a th:href="@{/product/authors}">authors</a>
-<!--                <a th:href="@{/product/categories}">categories</a>-->
-                <a href="#reviews">reviews</a>
-                <a href="#blogs">blogs</a>
+                <a th:href="@{/product/categories}">categories</a>
+                <a th:href="@{/index#reviews}">reviews</a>
+                <a th:href="@{/index#blogs}">blogs</a>
             </nav>
         </div>
 

@@ -24,36 +24,26 @@
 
 <!-- header section ends -->
 
-<!-- bottom navbar  -->
+<!-- authenticated section starts -->
+<section class="authenticated">
 
-<nav class="bottom-navbar">
-    <a th:href="@{/#home}" class="fas fa-home"></a>
-    <a th:href="@{/#featured}" class="fas fa-list"></a>
-    <a th:href="@{/#arrivals}" class="fas fa-tags"></a>
-    <a th:href="@{/#reviews}" class="fas fa-comments"></a>
-    <a th:href="@{/#blogs}" class="fas fa-blog"></a>
-</nav>
+    <h1 class="heading"><span>Login Successful!</span></h1>
+
+    <div>
+        <h1 th:text=" 'Welcome Back ' +${user.firstname}">NAME</h1>
+        <a th:href="@{/index}">Home Page</a>
+    </div>
 
 
-<!-- side-bar section ends -->
-
-<!-- Authenticated section starts -->
-
-<h1 class="heading"><span>Login Successful!</span></h1>
-
-<div>
-    <h1 th:text=" 'Welcome Back ' +${user.firstname}">NAME</h1>
-</div>
-
-<div class="bar">
-    <form method="post" th:action="@{/logout}">
-        <button type="submit" class="btn">
-            <i class="fa"></i>Sign Out
-        </button>
-    </form>
-</div>
-
-<!-- Authenticated section ends -->
+    <div class="bar">
+        <form method="post" th:action="@{/logout}">
+            <button type="submit" class="btn">
+                <i class="fa"></i>Sign Out
+            </button>
+        </form>
+    </div>
+</section>
+<!-- authenticated section ends -->
 
 <!-- footer section starts  -->
 

@@ -29,7 +29,7 @@ public class HomeController {
             model.addAttribute("user", user);
             return "index";
         }
-        return "login";
+        return "index";
     }
 
     @GetMapping("/authenticated")

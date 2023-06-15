@@ -14,9 +14,11 @@ import java.util.List;
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 
 
-    List<Product> findByNameContainingIgnoreCase(String name);
+    List<Product> findByNameContainingIgnoreCase(String keyword);
 
     List<Product> findByCategory(String category);
+
+
 
     List<Product> findByAuthor(String author);
 

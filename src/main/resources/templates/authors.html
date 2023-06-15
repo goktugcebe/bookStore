@@ -13,8 +13,6 @@
 
     <!-- custom css file link  -->
     <link th:href="@{/css/style.css}" rel="stylesheet"/>
-
-
 </head>
 <body>
 
@@ -24,24 +22,12 @@
 
 <!-- header section ends -->
 
-<!-- side-bar section starts -->
-<!-- bottom navbar  -->
-
-<nav class="bottom-navbar">
-    <a th:href="@{/#home}" class="fas fa-home"></a>
-    <a th:href="@{/#featured}" class="fas fa-list"></a>
-    <a th:href="@{/#arrivals}" class="fas fa-tags"></a>
-    <a th:href="@{/#reviews}" class="fas fa-comments"></a>
-    <a th:href="@{/#blogs}" class="fas fa-blog"></a>
-</nav>
-
-<!-- side-bar section ends -->
-
 <!-- author section starts  -->
 
-<section class="category">
+<section class="authors">
 
-    <h1 class="heading"><span>Find By Author</span></h1>
+    <h1 class="heading"><span>Authors</span></h1>
+
     <div>
         <table>
             <thead>
@@ -51,11 +37,11 @@
             </thead>
             <tbody>
             <tr th:each="author: ${authors}">
-                <a th:href="@{/product/by-author/{variable}(variable=${author.id})}" class="box">
-                    <div class="box">
-                        <td></td> <span th:text="${author.name}"></span>
-                    </div>
-                </a>
+                <div class="box">
+                    <td><a th:href="@{/product/by-author/{variable}(variable=${author.id})}" class="box">
+                        <span th:text="${author.name}"></span>
+                    </a></td>
+                </div>
             </tr>
             </tbody>
         </table>

@@ -17,40 +17,55 @@
 
 </head>
 <body>
+
 <!-- header section starts  -->
 
 <div th:replace="header :: header"></div>
 
 <!-- header section ends -->
 
-<!-- category section starts  -->
+<section class="products">
+    <div class="box-container">
 
-<section class="category">
-    <h1 class="heading"><span>Categories</span></h1>
+        <h1 class="heading"><span>Books By Category</span></h1>
 
-    <div>
         <table>
             <thead>
             <tr>
-                <th>Categories</th>
+                <th>Book</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Release Year</th>
+                <th>Rating</th>
+                <th>Price</th>
+                <th>Add to Cart</th>
             </tr>
             </thead>
-
             <tbody>
-            <tr th:each="category : ${categories}">
+            <tr th:each="product: ${products}">
+                <a th:href="@{/product/products/{variable}(variable=${product.id})}" class="box">
                     <div class="box">
-                        <td><a th:href="@{/product/categories/products(category=${category})}" th:text="${category}"></a></td>
+                        <td><img th:src="@{'/image/book-' + ${product.id} + '.png'}" class="product-image" alt=""></td>
+                        <td th:text="${product.name}"></td>
+                        <td th:text="${product.category}"></td>
+                        <td th:text="${product.releaseYear}"></td>
+                        <td th:text="${product.rating}"></td>
+                        <td th:text="${product.price} + ' $' "></td>
                     </div>
+                </a>
+                <td>
+                    <form th:action="@{/product/add/{productId}(productId=${product.id})}" method="post"
+                          th:object="${products}">
+                        <button type="submit" class="btn link">Add to Cart</button>
+                    </form>
+                </td>
             </tr>
-
             </tbody>
         </table>
+
     </div>
 </section>
-
-<!-- category section ends  -->
-
-<!-- footer section starts  -->
+<!-- products section ends -->
 
 <div th:replace="footer :: footer"></div>
 
@@ -66,6 +81,7 @@
 <!-- custom js file link  -->
 <!--<script src="/static/js/script.js"></script>-->
 <script type="text/javascript" th:src="@{/js/script.js}"></script>
+
 
 </body>
 </html>

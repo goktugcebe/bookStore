@@ -31,12 +31,28 @@ public class ProductController {
         return "categories";
     }
 
-    @GetMapping("/products/{category}")
-    public String getBooksByCategory(Model model, @PathVariable String category) {
-        List<ProductDTO> products = productService.findByCategory(category);
-        model.addAttribute("category", category);
+    @GetMapping("/categories/products")
+    public String productsByCategory(@RequestParam("category") String categoryName, Model model) {
+        List<ProductDTO> products = productService.findByCategory(categoryName);
         model.addAttribute("products", products);
-        return "products";
+        model.addAttribute("categoryName", categoryName);
+        return "products-by-category";
+    }
+
+//    @GetMapping("/products/{category}")
+//    public String getBooksByCategory(Model model, @PathVariable String category) {
+//        List<ProductDTO> products = productService.findByCategory(category);
+//        model.addAttribute("category", category);
+//        model.addAttribute("products", products);
+//        return "products-by-category";
+//    }
+
+
+    @GetMapping("/search")
+    public String searchProducts(Model model, @RequestParam("keyword") String keyword) {
+        List<ProductDTO> productDTOS = productService.findByName(keyword);
+        model.addAttribute("products", productDTOS);
+        return "product-list";
     }
 
 

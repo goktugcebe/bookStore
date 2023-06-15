@@ -17,6 +17,7 @@
 
 </head>
 <body>
+
 <!-- header section starts  -->
 
 <div th:replace="header :: header"></div>
@@ -27,8 +28,9 @@
 
 <section class="products">
 
+    <h1 class="heading"><span>Search By Name</span></h1>
 
-    <h1 class="heading"><span>All Books</span></h1>
+<div>
     <table>
         <thead>
         <tr>
@@ -41,20 +43,17 @@
             <th>Add to Cart</th>
         </tr>
         </thead>
-
         <tbody>
         <tr th:each="product : ${products}">
             <a th:href="@{/product/products/{variable}(variable=${product.id})}">
                 <div class="box">
                     <td><img th:src="@{'/image/book-' + ${product.id} + '.png'}" class="product-image" alt=""></td>
                     <td th:text="${product.name}"></td>
-                    <td th:utext="${product.category}"></td>
-                    <td th:utext="${product.releaseYear}"></td>
-                    <td th:utext="${product.rating}"></td>
-                    <td th:utext="${product.price} + ' $' "></td>
-
+                    <td th:text="${product.category}"></td>
+                    <td th:text="${product.releaseYear}"></td>
+                    <td th:text="${product.rating}"></td>
+                    <td th:text="${product.price} + ' $' "></td>
                 </div>
-
             </a>
             <td>
                 <form th:action="@{/product/add/{productId}(productId=${product.id})}" method="post" th:object="${products}">
@@ -62,14 +61,12 @@
                 </form>
             </td>
         </tr>
-
         </tbody>
     </table>
+</div>
 </section>
 
 <!-- products section ends -->
-
-<!-- footer section starts  -->
 
 <div th:replace="footer :: footer"></div>
 
@@ -85,6 +82,7 @@
 <!-- custom js file link  -->
 <!--<script src="/static/js/script.js"></script>-->
 <script type="text/javascript" th:src="@{/js/script.js}"></script>
+
 
 </body>
 </html>

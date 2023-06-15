@@ -24,18 +24,6 @@
 
 <!-- header section ends -->
 
-<!-- bottom navbar  -->
-
-<nav class="bottom-navbar">
-    <a href="#home">home</a>
-    <a th:href="@{/products}">books</a>
-    <a th:href="@{/authors}">authors</a>
-    <a th:href="@{/categories}">categories</a>
-    <a href="#reviews">reviews</a>
-    <a href="#blogs">blogs</a>
-</nav>
-
-
 <!-- home section starts  -->
 
 <div class="home-container">
@@ -46,7 +34,7 @@
     
             <div class="content">
                 <h3>upto 75% off</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam deserunt nostrum accusamus. Nam alias sit necessitatibus, aliquid ex minima at!</p>
+                <p>Discover our amazing book store where you can find a wide selection of books with discounts of up to 75% off! Whether you're a fan of fiction, non-fiction, or any genre in between, we have something for everyone. Explore our shelves filled with captivating stories, insightful knowledge, and inspiring tales.</p>
                 <a th:href="@{/product/products}" class="btn">shop now</a>
             </div>
             <div class="swiper products-slider">
@@ -60,6 +48,7 @@
                 </div>
                 <img th:src="@{/image/stand.png}" class="stand" alt="">
             </div>
+
     
         </div>
     
@@ -108,22 +97,18 @@
 </section>
 
 <!-- icons section ends -->
-<div th:each="category : ${categories}">
-    <a th:href="@{/products(category=${category})}" th:text="${category}"></a>
-</div>
-
 
 <section class="arrivals" id="arrivalss">
 
-    <h1 class="heading"> <span>categories</span> </h1>
+    <h1 class="heading"> <span>Arrivals</span> </h1>
 
     <div class="swiper arrivals-slider">
 
         <div class="swiper-wrapper">
 
-            <a href="#" class="swiper-slide box">
+            <a th:href="@{/product/products}" class="swiper-slide box">
                 <div class="image">
-                    <img th:src="@{/image/product-1.png}" alt="">
+                    <img th:src="@{/image/book-1.png}" alt="">
                 </div>
                 <div class="content">
                     <h3>new arrivals</h3>
@@ -138,9 +123,9 @@
                 </div>
             </a>
 
-            <a href="#" class="swiper-slide box">
+            <a th:href="@{/product/products}" class="swiper-slide box">
                 <div class="image">
-                    <img th:src="@{/image/product-2.png}" alt="">
+                    <img th:src="@{/image/book-2.png}" alt="">
                 </div>
                 <div class="content">
                     <h3>new arrivals</h3>
@@ -155,9 +140,9 @@
                 </div>
             </a>
 
-            <a href="#" class="swiper-slide box">
+            <a th:href="@{/product/products}" class="swiper-slide box">
                 <div class="image">
-                    <img th:src="@{/image/product-3.png}" alt="">
+                    <img th:src="@{/image/book-3.png}" alt="">
                 </div>
                 <div class="content">
                     <h3>new arrivals</h3>
@@ -172,9 +157,9 @@
                 </div>
             </a>
 
-            <a href="#" class="swiper-slide box">
+            <a th:href="@{/product/products}" class="swiper-slide box">
                 <div class="image">
-                    <img th:src="@{/image/product-4.png}" alt="">
+                    <img th:src="@{/image/book-4.png}" alt="">
                 </div>
                 <div class="content">
                     <h3>new arrivals</h3>
@@ -189,9 +174,9 @@
                 </div>
             </a>
 
-            <a href="#" class="swiper-slide box">
+            <a th:href="@{/product/products}" class="swiper-slide box">
                 <div class="image">
-                    <img th:src="@{/image/product-5.png}" alt="">
+                    <img th:src="@{/image/book-5.png}" alt="">
                 </div>
                 <div class="content">
                     <h3>new arrivals</h3>
@@ -214,9 +199,9 @@
 
         <div class="swiper-wrapper">
 
-            <a href="#" class="swiper-slide box">
+            <a th:href="@{/product/products}" class="swiper-slide box">
                 <div class="image">
-                    <img th:src="@{/image/product-6.png}" alt="">
+                    <img th:src="@{/image/book-6.png}" alt="">
                 </div>
                 <div class="content">
                     <h3>new arrivals</h3>
@@ -231,9 +216,9 @@
                 </div>
             </a>
 
-            <a href="#" class="swiper-slide box">
+            <a th:href="@{/product/products}" class="swiper-slide box">
                 <div class="image">
-                    <img th:src="@{/image/product-7.png}" alt="">
+                    <img th:src="@{/image/book-7.png}" alt="">
                 </div>
                 <div class="content">
                     <h3>new arrivals</h3>
@@ -248,9 +233,9 @@
                 </div>
             </a>
 
-            <a href="#" class="swiper-slide box">
+            <a th:href="@{/product/products}" class="swiper-slide box">
                 <div class="image">
-                    <img th:src="@{/image/product-8.png}" alt="">
+                    <img th:src="@{/image/book-8.png}" alt="">
                 </div>
                 <div class="content">
                     <h3>new arrivals</h3>
@@ -265,9 +250,9 @@
                 </div>
             </a>
 
-            <a href="#" class="swiper-slide box">
+            <a th:href="@{/product/products}" class="swiper-slide box">
                 <div class="image">
-                    <img th:src="@{/image/product-9.png}" alt="">
+                    <img th:src="@{/image/book-9.png}" alt="">
                 </div>
                 <div class="content">
                     <h3>new arrivals</h3>
@@ -282,9 +267,9 @@
                 </div>
             </a>
 
-            <a href="#" class="swiper-slide box">
+            <a th:href="@{/product/products}" class="swiper-slide box">
                 <div class="image">
-                    <img th:src="@{/image/product-10.png}" alt="">
+                    <img th:src="@{/image/book-10.png}" alt="">
                 </div>
                 <div class="content">
                     <h3>new arrivals</h3>
@@ -308,182 +293,182 @@
 
 <!-- featured section starts  -->
 
-<section class="featured" id="featured">
+<!--<section class="featured" id="featured">-->
 
-    <h1 class="heading"> <span>featured products</span> </h1>
+<!--    <h1 class="heading"> <span>featured products</span> </h1>-->
 
-    <div class="swiper featured-slider">
+<!--    <div class="swiper featured-slider">-->
 
-        <div class="swiper-wrapper">
+<!--        <div class="swiper-wrapper">-->
 
-            <div class="swiper-slide box">
-                <div class="icons">
-                    <a href="#" class="fas fa-search"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-eye"></a>
-                </div>
-                <div class="image">
-                    <img th:src="@{/image/product-1.png}" alt="">
-                </div>
-                <div class="content">
-                    <h3>featured products</h3>
-                    <div class="price">$15.99 <span>$20.99</span></div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-            </div>
+<!--            <div class="swiper-slide box">-->
+<!--                <div class="icons">-->
+<!--                    <a href="#" class="fas fa-search"></a>-->
+<!--                    <a href="#" class="fas fa-heart"></a>-->
+<!--                    <a href="#" class="fas fa-eye"></a>-->
+<!--                </div>-->
+<!--                <div class="image">-->
+<!--                    <img th:src="@{/image/product-1.png}" alt="">-->
+<!--                </div>-->
+<!--                <div class="content">-->
+<!--                    <h3>featured products</h3>-->
+<!--                    <div class="price">$15.99 <span>$20.99</span></div>-->
+<!--                    <a href="#" class="btn">add to cart</a>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <div class="swiper-slide box">
-                <div class="icons">
-                    <a href="#" class="fas fa-search"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-eye"></a>
-                </div>
-                <div class="image">
-                    <img th:src="@{/image/product-2.png}" alt="">
-                </div>
-                <div class="content">
-                    <h3>featured products</h3>
-                    <div class="price">$15.99 <span>$20.99</span></div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-            </div>
+<!--            <div class="swiper-slide box">-->
+<!--                <div class="icons">-->
+<!--                    <a href="#" class="fas fa-search"></a>-->
+<!--                    <a href="#" class="fas fa-heart"></a>-->
+<!--                    <a href="#" class="fas fa-eye"></a>-->
+<!--                </div>-->
+<!--                <div class="image">-->
+<!--                    <img th:src="@{/image/product-2.png}" alt="">-->
+<!--                </div>-->
+<!--                <div class="content">-->
+<!--                    <h3>featured products</h3>-->
+<!--                    <div class="price">$15.99 <span>$20.99</span></div>-->
+<!--                    <a href="#" class="btn">add to cart</a>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <div class="swiper-slide box">
-                <div class="icons">
-                    <a href="#" class="fas fa-search"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-eye"></a>
-                </div>
-                <div class="image">
-                    <img th:src="@{/image/product-3.png}" alt="">
-                </div>
-                <div class="content">
-                    <h3>featured products</h3>
-                    <div class="price">$15.99 <span>$20.99</span></div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-            </div>
+<!--            <div class="swiper-slide box">-->
+<!--                <div class="icons">-->
+<!--                    <a href="#" class="fas fa-search"></a>-->
+<!--                    <a href="#" class="fas fa-heart"></a>-->
+<!--                    <a href="#" class="fas fa-eye"></a>-->
+<!--                </div>-->
+<!--                <div class="image">-->
+<!--                    <img th:src="@{/image/product-3.png}" alt="">-->
+<!--                </div>-->
+<!--                <div class="content">-->
+<!--                    <h3>featured products</h3>-->
+<!--                    <div class="price">$15.99 <span>$20.99</span></div>-->
+<!--                    <a href="#" class="btn">add to cart</a>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <div class="swiper-slide box">
-                <div class="icons">
-                    <a href="#" class="fas fa-search"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-eye"></a>
-                </div>
-                <div class="image">
-                    <img th:src="@{/image/product-4.png}" alt="">
-                </div>
-                <div class="content">
-                    <h3>featured products</h3>
-                    <div class="price">$15.99 <span>$20.99</span></div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-            </div>
+<!--            <div class="swiper-slide box">-->
+<!--                <div class="icons">-->
+<!--                    <a href="#" class="fas fa-search"></a>-->
+<!--                    <a href="#" class="fas fa-heart"></a>-->
+<!--                    <a href="#" class="fas fa-eye"></a>-->
+<!--                </div>-->
+<!--                <div class="image">-->
+<!--                    <img th:src="@{/image/product-4.png}" alt="">-->
+<!--                </div>-->
+<!--                <div class="content">-->
+<!--                    <h3>featured products</h3>-->
+<!--                    <div class="price">$15.99 <span>$20.99</span></div>-->
+<!--                    <a href="#" class="btn">add to cart</a>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <div class="swiper-slide box">
-                <div class="icons">
-                    <a href="#" class="fas fa-search"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-eye"></a>
-                </div>
-                <div class="image">
-                    <img th:src="@{/image/product-5.png}" alt="">
-                </div>
-                <div class="content">
-                    <h3>featured products</h3>
-                    <div class="price">$15.99 <span>$20.99</span></div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-            </div>
+<!--            <div class="swiper-slide box">-->
+<!--                <div class="icons">-->
+<!--                    <a href="#" class="fas fa-search"></a>-->
+<!--                    <a href="#" class="fas fa-heart"></a>-->
+<!--                    <a href="#" class="fas fa-eye"></a>-->
+<!--                </div>-->
+<!--                <div class="image">-->
+<!--                    <img th:src="@{/image/product-5.png}" alt="">-->
+<!--                </div>-->
+<!--                <div class="content">-->
+<!--                    <h3>featured products</h3>-->
+<!--                    <div class="price">$15.99 <span>$20.99</span></div>-->
+<!--                    <a href="#" class="btn">add to cart</a>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <div class="swiper-slide box">
-                <div class="icons">
-                    <a href="#" class="fas fa-search"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-eye"></a>
-                </div>
-                <div class="image">
-                    <img th:src="@{/image/product-6.png}" alt="">
-                </div>
-                <div class="content">
-                    <h3>featured products</h3>
-                    <div class="price">$15.99 <span>$20.99</span></div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-            </div>
+<!--            <div class="swiper-slide box">-->
+<!--                <div class="icons">-->
+<!--                    <a href="#" class="fas fa-search"></a>-->
+<!--                    <a href="#" class="fas fa-heart"></a>-->
+<!--                    <a href="#" class="fas fa-eye"></a>-->
+<!--                </div>-->
+<!--                <div class="image">-->
+<!--                    <img th:src="@{/image/product-6.png}" alt="">-->
+<!--                </div>-->
+<!--                <div class="content">-->
+<!--                    <h3>featured products</h3>-->
+<!--                    <div class="price">$15.99 <span>$20.99</span></div>-->
+<!--                    <a href="#" class="btn">add to cart</a>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <div class="swiper-slide box">
-                <div class="icons">
-                    <a href="#" class="fas fa-search"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-eye"></a>
-                </div>
-                <div class="image">
-                    <img th:src="@{/image/product-7.png}" alt="">
-                </div>
-                <div class="content">
-                    <h3>featured products</h3>
-                    <div class="price">$15.99 <span>$20.99</span></div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-            </div>
+<!--            <div class="swiper-slide box">-->
+<!--                <div class="icons">-->
+<!--                    <a href="#" class="fas fa-search"></a>-->
+<!--                    <a href="#" class="fas fa-heart"></a>-->
+<!--                    <a href="#" class="fas fa-eye"></a>-->
+<!--                </div>-->
+<!--                <div class="image">-->
+<!--                    <img th:src="@{/image/product-7.png}" alt="">-->
+<!--                </div>-->
+<!--                <div class="content">-->
+<!--                    <h3>featured products</h3>-->
+<!--                    <div class="price">$15.99 <span>$20.99</span></div>-->
+<!--                    <a href="#" class="btn">add to cart</a>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <div class="swiper-slide box">
-                <div class="icons">
-                    <a href="#" class="fas fa-search"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-eye"></a>
-                </div>
-                <div class="image">
-                    <img th:src="@{/image/product-8.png}" alt="">
-                </div>
-                <div class="content">
-                    <h3>featured products</h3>
-                    <div class="price">$15.99 <span>$20.99</span></div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-            </div>
+<!--            <div class="swiper-slide box">-->
+<!--                <div class="icons">-->
+<!--                    <a href="#" class="fas fa-search"></a>-->
+<!--                    <a href="#" class="fas fa-heart"></a>-->
+<!--                    <a href="#" class="fas fa-eye"></a>-->
+<!--                </div>-->
+<!--                <div class="image">-->
+<!--                    <img th:src="@{/image/product-8.png}" alt="">-->
+<!--                </div>-->
+<!--                <div class="content">-->
+<!--                    <h3>featured products</h3>-->
+<!--                    <div class="price">$15.99 <span>$20.99</span></div>-->
+<!--                    <a href="#" class="btn">add to cart</a>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <div class="swiper-slide box">
-                <div class="icons">
-                    <a href="#" class="fas fa-search"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-eye"></a>
-                </div>
-                <div class="image">
-                    <img th:src="@{/image/product-9.png}" alt="">
-                </div>
-                <div class="content">
-                    <h3>featured products</h3>
-                    <div class="price">$15.99 <span>$20.99</span></div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-            </div>
+<!--            <div class="swiper-slide box">-->
+<!--                <div class="icons">-->
+<!--                    <a href="#" class="fas fa-search"></a>-->
+<!--                    <a href="#" class="fas fa-heart"></a>-->
+<!--                    <a href="#" class="fas fa-eye"></a>-->
+<!--                </div>-->
+<!--                <div class="image">-->
+<!--                    <img th:src="@{/image/product-9.png}" alt="">-->
+<!--                </div>-->
+<!--                <div class="content">-->
+<!--                    <h3>featured products</h3>-->
+<!--                    <div class="price">$15.99 <span>$20.99</span></div>-->
+<!--                    <a href="#" class="btn">add to cart</a>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <div class="swiper-slide box">
-                <div class="icons">
-                    <a href="#" class="fas fa-search"></a>
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="fas fa-eye"></a>
-                </div>
-                <div class="image">
-                    <img th:src="@{/image/product-10.png}" alt="">
-                </div>
-                <div class="content">
-                    <h3>featured products</h3>
-                    <div class="price">$15.99 <span>$20.99</span></div>
-                    <a href="#" class="btn">add to cart</a>
-                </div>
-            </div>
+<!--            <div class="swiper-slide box">-->
+<!--                <div class="icons">-->
+<!--                    <a href="#" class="fas fa-search"></a>-->
+<!--                    <a href="#" class="fas fa-heart"></a>-->
+<!--                    <a href="#" class="fas fa-eye"></a>-->
+<!--                </div>-->
+<!--                <div class="image">-->
+<!--                    <img th:src="@{/image/product-10.png}" alt="">-->
+<!--                </div>-->
+<!--                <div class="content">-->
+<!--                    <h3>featured products</h3>-->
+<!--                    <div class="price">$15.99 <span>$20.99</span></div>-->
+<!--                    <a href="#" class="btn">add to cart</a>-->
+<!--                </div>-->
+<!--            </div>-->
 
-        </div>
+<!--        </div>-->
 
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+<!--        <div class="swiper-button-next"></div>-->
+<!--        <div class="swiper-button-prev"></div>-->
 
-    </div>
+<!--    </div>-->
 
-</section>
+<!--</section>-->
 
 <!-- featured section ends -->
 
@@ -507,197 +492,197 @@
 
 <!-- arrivals section starts  -->
 
-<section class="arrivals" id="arrivals">
+<!--<section class="arrivals" id="arrivals">-->
 
-    <h1 class="heading"> <span>new arrivals</span> </h1>
+<!--    <h1 class="heading"> <span>new arrivals</span> </h1>-->
 
-    <div class="swiper arrivals-slider">
+<!--    <div class="swiper arrivals-slider">-->
 
-        <div class="swiper-wrapper">
+<!--        <div class="swiper-wrapper">-->
 
-            <a href="#" class="swiper-slide box">
-                <div class="image">
-                    <img th:src="@{/image/product-1.png}" alt="">
-                </div>
-                <div class="content">
-                    <h3>new arrivals</h3>
-                    <div class="price">$15.99 <span>$20.99</span></div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
-            </a>
+<!--            <a href="#" class="swiper-slide box">-->
+<!--                <div class="image">-->
+<!--                    <img th:src="@{/image/product-1.png}" alt="">-->
+<!--                </div>-->
+<!--                <div class="content">-->
+<!--                    <h3>new arrivals</h3>-->
+<!--                    <div class="price">$15.99 <span>$20.99</span></div>-->
+<!--                    <div class="stars">-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star-half-alt"></i>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
 
-            <a href="#" class="swiper-slide box">
-                <div class="image">
-                    <img th:src="@{/image/product-2.png}" alt="">
-                </div>
-                <div class="content">
-                    <h3>new arrivals</h3>
-                    <div class="price">$15.99 <span>$20.99</span></div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
-            </a>
+<!--            <a href="#" class="swiper-slide box">-->
+<!--                <div class="image">-->
+<!--                    <img th:src="@{/image/product-2.png}" alt="">-->
+<!--                </div>-->
+<!--                <div class="content">-->
+<!--                    <h3>new arrivals</h3>-->
+<!--                    <div class="price">$15.99 <span>$20.99</span></div>-->
+<!--                    <div class="stars">-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star-half-alt"></i>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
 
-            <a href="#" class="swiper-slide box">
-                <div class="image">
-                    <img th:src="@{/image/product-3.png}" alt="">
-                </div>
-                <div class="content">
-                    <h3>new arrivals</h3>
-                    <div class="price">$15.99 <span>$20.99</span></div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
-            </a>
+<!--            <a href="#" class="swiper-slide box">-->
+<!--                <div class="image">-->
+<!--                    <img th:src="@{/image/product-3.png}" alt="">-->
+<!--                </div>-->
+<!--                <div class="content">-->
+<!--                    <h3>new arrivals</h3>-->
+<!--                    <div class="price">$15.99 <span>$20.99</span></div>-->
+<!--                    <div class="stars">-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star-half-alt"></i>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
 
-            <a href="#" class="swiper-slide box">
-                <div class="image">
-                    <img th:src="@{/image/product-4.png}" alt="">
-                </div>
-                <div class="content">
-                    <h3>new arrivals</h3>
-                    <div class="price">$15.99 <span>$20.99</span></div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
-            </a>
+<!--            <a href="#" class="swiper-slide box">-->
+<!--                <div class="image">-->
+<!--                    <img th:src="@{/image/product-4.png}" alt="">-->
+<!--                </div>-->
+<!--                <div class="content">-->
+<!--                    <h3>new arrivals</h3>-->
+<!--                    <div class="price">$15.99 <span>$20.99</span></div>-->
+<!--                    <div class="stars">-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star-half-alt"></i>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
 
-            <a href="#" class="swiper-slide box">
-                <div class="image">
-                    <img th:src="@{/image/product-5.png}" alt="">
-                </div>
-                <div class="content">
-                    <h3>new arrivals</h3>
-                    <div class="price">$15.99 <span>$20.99</span></div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
-            </a>
+<!--            <a href="#" class="swiper-slide box">-->
+<!--                <div class="image">-->
+<!--                    <img th:src="@{/image/product-5.png}" alt="">-->
+<!--                </div>-->
+<!--                <div class="content">-->
+<!--                    <h3>new arrivals</h3>-->
+<!--                    <div class="price">$15.99 <span>$20.99</span></div>-->
+<!--                    <div class="stars">-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star-half-alt"></i>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
 
-        </div>
+<!--        </div>-->
 
-    </div>
+<!--    </div>-->
 
-    <div class="swiper arrivals-slider">
+<!--    <div class="swiper arrivals-slider">-->
 
-        <div class="swiper-wrapper">
+<!--        <div class="swiper-wrapper">-->
 
-            <a href="#" class="swiper-slide box">
-                <div class="image">
-                    <img th:src="@{/image/product-6.png}" alt="">
-                </div>
-                <div class="content">
-                    <h3>new arrivals</h3>
-                    <div class="price">$15.99 <span>$20.99</span></div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
-            </a>
+<!--            <a href="#" class="swiper-slide box">-->
+<!--                <div class="image">-->
+<!--                    <img th:src="@{/image/product-6.png}" alt="">-->
+<!--                </div>-->
+<!--                <div class="content">-->
+<!--                    <h3>new arrivals</h3>-->
+<!--                    <div class="price">$15.99 <span>$20.99</span></div>-->
+<!--                    <div class="stars">-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star-half-alt"></i>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
 
-            <a href="#" class="swiper-slide box">
-                <div class="image">
-                    <img th:src="@{/image/product-7.png}" alt="">
-                </div>
-                <div class="content">
-                    <h3>new arrivals</h3>
-                    <div class="price">$15.99 <span>$20.99</span></div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
-            </a>
+<!--            <a href="#" class="swiper-slide box">-->
+<!--                <div class="image">-->
+<!--                    <img th:src="@{/image/product-7.png}" alt="">-->
+<!--                </div>-->
+<!--                <div class="content">-->
+<!--                    <h3>new arrivals</h3>-->
+<!--                    <div class="price">$15.99 <span>$20.99</span></div>-->
+<!--                    <div class="stars">-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star-half-alt"></i>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
 
-            <a href="#" class="swiper-slide box">
-                <div class="image">
-                    <img th:src="@{/image/product-8.png}" alt="">
-                </div>
-                <div class="content">
-                    <h3>new arrivals</h3>
-                    <div class="price">$15.99 <span>$20.99</span></div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
-            </a>
+<!--            <a href="#" class="swiper-slide box">-->
+<!--                <div class="image">-->
+<!--                    <img th:src="@{/image/product-8.png}" alt="">-->
+<!--                </div>-->
+<!--                <div class="content">-->
+<!--                    <h3>new arrivals</h3>-->
+<!--                    <div class="price">$15.99 <span>$20.99</span></div>-->
+<!--                    <div class="stars">-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star-half-alt"></i>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
 
-            <a href="#" class="swiper-slide box">
-                <div class="image">
-                    <img th:src="@{/image/product-9.png}" alt="">
-                </div>
-                <div class="content">
-                    <h3>new arrivals</h3>
-                    <div class="price">$15.99 <span>$20.99</span></div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
-            </a>
+<!--            <a href="#" class="swiper-slide box">-->
+<!--                <div class="image">-->
+<!--                    <img th:src="@{/image/product-9.png}" alt="">-->
+<!--                </div>-->
+<!--                <div class="content">-->
+<!--                    <h3>new arrivals</h3>-->
+<!--                    <div class="price">$15.99 <span>$20.99</span></div>-->
+<!--                    <div class="stars">-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star-half-alt"></i>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
 
-            <a href="#" class="swiper-slide box">
-                <div class="image">
-                    <img th:src="@{/image/product-10.png}" alt="">
-                </div>
-                <div class="content">
-                    <h3>new arrivals</h3>
-                    <div class="price">$15.99 <span>$20.99</span></div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
-            </a>
+<!--            <a href="#" class="swiper-slide box">-->
+<!--                <div class="image">-->
+<!--                    <img th:src="@{/image/product-10.png}" alt="">-->
+<!--                </div>-->
+<!--                <div class="content">-->
+<!--                    <h3>new arrivals</h3>-->
+<!--                    <div class="price">$15.99 <span>$20.99</span></div>-->
+<!--                    <div class="stars">-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star"></i>-->
+<!--                        <i class="fas fa-star-half-alt"></i>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
 
-        </div>
+<!--        </div>-->
 
-    </div>
+<!--    </div>-->
 
-</section>
+<!--</section>-->
 
 <!-- arrivals section ends -->
 
@@ -711,7 +696,7 @@
             <h3>deal of the day</h3>
             <h1>upto 50% off</h1>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde perspiciatis in atque dolore tempora quaerat at fuga dolorum natus velit.</p>
-            <a th:href="@{/books}" class="btn">shop now</a>
+            <a th:href="@{/product/products}" class="btn">shop now</a>
         </div>
     
         <div class="image">

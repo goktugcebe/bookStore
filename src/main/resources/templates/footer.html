@@ -13,17 +13,18 @@
 
         <div class="box">
             <h3>quick links</h3>
-            <a href="#"> <i class="fas fa-arrow-right"></i> home </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> featured </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> arrivals </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> reviews </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> blogs </a>
+            <a th:href="@{/index#home}"> <i class="fas fa-arrow-right"></i> home </a>
+            <a th:href="@{/product/products}"> <i class="fas fa-arrow-right"></i> books </a>
+            <a th:href="@{/product/authors}"> <i class="fas fa-arrow-right"></i> authors </a>
+            <a th:href="@{/product/categories}"> <i class="fas fa-arrow-right"></i> categories </a>
+            <a th:href="@{/index#reviews}"> <i class="fas fa-arrow-right"></i> reviews </a>
+            <a th:href="@{/index#blogs}"> <i class="fas fa-arrow-right"></i> blogs </a>
         </div>
 
         <div class="box">
             <h3>extra links</h3>
-            <a href="#"> <i class="fas fa-arrow-right"></i> account info </a>
-            <a href="#"> <i class="fas fa-arrow-right"></i> ordered items </a>
+            <a th:href="@{/authenticated}"> <i class="fas fa-arrow-right"></i> account info </a>
+            <a th:href="@{/cart}"> <i class="fas fa-arrow-right"></i> ordered items </a>
             <a href="#"> <i class="fas fa-arrow-right"></i> privacy policy </a>
             <a href="#"> <i class="fas fa-arrow-right"></i> payment method </a>
             <a href="#"> <i class="fas fa-arrow-right"></i> our serivces </a>

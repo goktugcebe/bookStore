@@ -88,8 +88,8 @@ public class ProductServiceImpl implements ProductService {
 
 
     @Override
-    public List<ProductDTO> findByName(String name) {
-        List<Product> products = productRepository.findByNameContainingIgnoreCase(name);
+    public List<ProductDTO> findByName(String keyword) {
+        List<Product> products = productRepository.findByNameContainingIgnoreCase(keyword);
 
         return products.stream().map(book ->
                         this.modelMapper.map(book, ProductDTO.class))
