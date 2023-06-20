@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AuthorityRepository extends JpaRepository<Authority, Integer> {
-    Authority findByAuthority(String name);
+    Authority findFirstByAuthority(String name);
 }

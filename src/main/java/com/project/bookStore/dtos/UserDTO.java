@@ -9,10 +9,10 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
-//@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 @Getter
 @Setter
-@ToString
+@AllArgsConstructor
 @NoArgsConstructor
 public class UserDTO extends BaseDTO {
     @NotBlank(message = "Enter your email")
@@ -30,7 +30,7 @@ public class UserDTO extends BaseDTO {
     @NotEmpty(message = "Please enter valid phone number.")
     @Size(min = 9,max = 9, message = "Phone Number must be 9 digits")
     private String phoneNumber;
-//    @NotBlank(message = "Please enter gender.")
+
 
     private String address;
     private String gender;

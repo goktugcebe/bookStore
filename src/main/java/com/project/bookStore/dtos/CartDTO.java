@@ -3,7 +3,7 @@ package com.project.bookStore.dtos;
 import com.project.bookStore.common.dto.BaseDTO;
 import lombok.*;
 
-
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

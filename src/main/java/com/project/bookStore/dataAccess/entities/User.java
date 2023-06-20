@@ -1,5 +1,6 @@
 package com.project.bookStore.dataAccess.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.project.bookStore.common.entity.BaseEntity;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -15,7 +16,7 @@ import java.util.Set;
 
 @Entity
 @Getter
-//@Builder
+@AllArgsConstructor
 @Setter
 @NoArgsConstructor
 @Table(name = "users")
@@ -29,8 +30,6 @@ public class User extends BaseEntity implements UserDetails {
     private String firstname;
     @Column(name = "lastname")
     private String lastname;
-    @Column(name = "gender")
-    private String gender;
     @Column(name = "address")
     private String address;
     @Column(name = "phone_number")
@@ -39,13 +38,19 @@ public class User extends BaseEntity implements UserDetails {
     private Timestamp createdAt;
     @Column(name = "enabled")
     private Boolean enabled;
-    @OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Cart cart;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinTable(name = "user_authority", joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "authority_id"))
-    private List<Authority> authorities;
+    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @JoinTable(name = "user_authority",
+            joinColumns = {
+                    @JoinColumn(name = "user_id",referencedColumnName = "id")
+            },
+            inverseJoinColumns = {
+                    @JoinColumn(name = "authority_id",referencedColumnName = "id")
+            })
+    @JsonManagedReference
+    private Set<Authority> authorities;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

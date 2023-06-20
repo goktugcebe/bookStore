@@ -10,7 +10,6 @@ import java.util.*;
 @Entity(name = "cart")
 @Getter
 @Setter
-@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)

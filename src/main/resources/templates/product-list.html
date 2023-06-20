@@ -47,7 +47,7 @@
         <tr th:each="product : ${products}">
             <a th:href="@{/product/products/{variable}(variable=${product.id})}">
                 <div class="box">
-                    <td><img th:src="@{'/image/book-' + ${product.id} + '.png'}" class="product-image" alt=""></td>
+                    <td><img th:src="@{'/image/book-' + ${product.image} + '.png'}" class="product-image" alt=""></td>
                     <td th:text="${product.name}"></td>
                     <td th:text="${product.category}"></td>
                     <td th:text="${product.releaseYear}"></td>

@@ -46,7 +46,7 @@
             </thead>
             <tbody>
             <tr th:each="cart : ${carts}">
-                <td><img th:src="@{'/image/book-'+ ${cart.product.id} + '.png'}" class="product-image" alt=""></td>
+                <td><img th:src="@{'/image/book-'+ ${cart.product.image} + '.png'}" class="product-image" alt=""></td>
                 <td th:text="${cart.product.name}"></td>
                 <td th:text="${cart.product.price + ' $'}"></td>
 <!--                <td th:text="${cart.quantity}"></td>-->

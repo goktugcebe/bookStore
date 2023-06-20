@@ -1,10 +1,7 @@
 package com.project.bookStore.dtos;
 
 import com.project.bookStore.common.dto.BaseDTO;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -13,10 +10,11 @@ import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.List;
 
-
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 public class ProductDTO extends BaseDTO {
     @NotBlank(message = "Enter your last name")
     @Size(min = 1, max = 50)
@@ -43,8 +41,6 @@ public class ProductDTO extends BaseDTO {
     private int cartId;
 
     private AuthorDTO author;
-
-//    private List<CartDTO> orders;
 
 
 }

@@ -10,7 +10,6 @@ import javax.persistence.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 @Table(name = "products")
 public class Product extends BaseEntity {
     @Column(name = "name")
@@ -25,14 +24,12 @@ public class Product extends BaseEntity {
     private double price;
     @Column(name = "category")
     private String category;
-
+    @Column(name = "release_year")
+    private int releaseYear;
     @Column(name = "image")
     private String image;
 
 
-//    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-//    @JoinColumn(name = "category_id", referencedColumnName = "category_id")
-//    private Category category;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Cart cart;

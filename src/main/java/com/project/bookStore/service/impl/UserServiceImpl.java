@@ -1,5 +1,6 @@
 package com.project.bookStore.service.impl;
 
+import com.project.bookStore.dataAccess.entities.Authority;
 import com.project.bookStore.dataAccess.entities.Cart;
 import com.project.bookStore.dataAccess.entities.User;
 import com.project.bookStore.dataAccess.repositories.AuthorityRepository;
@@ -15,8 +16,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -100,8 +103,22 @@ public class UserServiceImpl implements UserService  {
         //enable the new user
         user.setEnabled(true);
 
+        Authority authority=new Authority();
+        if (authority==null){
+            authority.setAuthority("USER");
+            this.authorityRepository.save(authority);
+        }
+        authority=findFirstByAuthority("USER");
+        Set<Authority> authoritySet=new HashSet<>();
+        authoritySet.add(authority);
+        user.setAuthorities(authoritySet);
+
         //save user to database
         return save(user);
+    }
+
+    public Authority findFirstByAuthority(String name){
+        return this.authorityRepository.findFirstByAuthority(name);
     }
 
     @Transactional
